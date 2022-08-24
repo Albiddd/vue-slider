@@ -16,7 +16,7 @@
     </div>
     <div class="container">
 
-      <div class="slider">
+      <div class="slider" @mouseleave="startAutoplay" @mouseenter="stopAutoplay">
 
         <ul class="slides-wrapper">
           <li class="slide" :class="i == currentSlide ? 'active' : '' " v-for="(slide, i) in slides">

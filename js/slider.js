@@ -13,7 +13,7 @@ const app = new Vue({
 	data:{
 		slides,
 		currentSlide: 0,
-
+		interval: null,
 	},
 	methods:{
 		nextSlide(){
@@ -27,6 +27,12 @@ const app = new Vue({
 			if (this.currentSlide < 0){
 				this.currentSlide = this.slides.length-1
 			}
+		},
+		startAutoplay(){
+			this.interval = setInterval(this.nextSlide, 3000)
+		},
+		stopAutoplay(){
+			clearInterval(this.interval)
 		}
 	}
 })
